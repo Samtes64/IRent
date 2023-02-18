@@ -1,5 +1,6 @@
 import 'package:chefio1/constans/colors.dart';
 import 'package:chefio1/view/screen/home_screen.dart';
+import 'package:chefio1/view/screen/product_item_screen.dart';
 import 'package:chefio1/view/screen/sign_up_screen.dart';
 import 'package:chefio1/view/widget/custom_button.dart';
 import 'package:chefio1/view/widget/custom_text_form_fild.dart';
@@ -39,7 +40,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          "Welcome Back!",
+                          "Login",
                           style: Theme.of(context).textTheme.headline1,
                         ),
                         Padding(
@@ -52,7 +53,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         CostomTextFormFild(
                           validator: (value) {
                             if (value!.isEmpty) {
-                              return "Please enter the email";
+                              return "Please enter the username";
                             } else {
                               return null;
                             }
@@ -79,15 +80,6 @@ class _SignInScreenState extends State<SignInScreen> {
                             obscure = !obscure;
                           },
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              'Forgot password?',
-                              style: Theme.of(context).textTheme.bodyText2,
-                            )
-                          ],
-                        )
                       ],
                     ),
                   ),
@@ -97,7 +89,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CustomButton(
-                          text: "Sign In",
+                          text: "Log In",
                           color: primary,
                           onTap: () {
                             setState(() {
@@ -105,7 +97,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomeScreen(),
+                                    builder: (context) => ProductItemScreen(),
                                   ),
                                   (route) => false,
                                 );
@@ -114,45 +106,6 @@ class _SignInScreenState extends State<SignInScreen> {
                             });
                           },
                         ),
-                        Text(
-                          'Or continue with',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyText2!
-                              .copyWith(color: SecondaryText),
-                        ),
-                        CustomButton(
-                          onTap: () {},
-                          text: "G google",
-                          color: Secondary,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Dont have any account?",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2!
-                                  .copyWith(color: mainText),
-                            ),
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => SignUpScreen(),
-                                      ));
-                                },
-                                child: Text(
-                                  "Sign Up",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText2!
-                                      .copyWith(color: primary),
-                                ))
-                          ],
-                        )
                       ]),
                 ),
               ],

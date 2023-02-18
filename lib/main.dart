@@ -1,4 +1,5 @@
 import 'package:chefio1/constans/colors.dart';
+import 'package:chefio1/view/screen/product_item_screen.dart';
 import 'package:chefio1/view/screen/start_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: StartScreen(),
+      home: ProductItemScreen(),
     );
   }
 }

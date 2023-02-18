@@ -1,11 +1,14 @@
 import 'dart:ui';
 
 import 'package:chefio1/constans/colors.dart';
+import 'package:chefio1/view/screen/sign_in_screen.dart';
 import 'package:chefio1/view/screen/taps/profile_tap.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:iconly/iconly.dart';
+
+import '../widget/custom_button.dart';
 
 class ProductItemScreen extends StatelessWidget {
   const ProductItemScreen({Key? key}) : super(key: key);
@@ -18,7 +21,7 @@ class ProductItemScreen extends StatelessWidget {
         children: [
           SizedBox(
             width: double.infinity,
-            child: Image.asset("assets/imges/Food Picture.png"),
+            child: Image.asset("assets/imges/car.jpg"),
           ),
           buttonArrow(context),
           scroll(),
@@ -32,7 +35,10 @@ class ProductItemScreen extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: InkWell(
         onTap: () {
-          Navigator.pop(context);
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => SignInScreen()),
+              (route) => false);
         },
         child: Container(
           clipBehavior: Clip.hardEdge,
@@ -95,14 +101,14 @@ class ProductItemScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "Cacao Maca Walnut Milk",
+                    "Toyota Yaris",
                     style: Theme.of(context).textTheme.headline2,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   Text(
-                    "Food .60 min",
+                    "Category Car",
                     style: Theme.of(context)
                         .textTheme
                         .bodyText2!
@@ -114,14 +120,6 @@ class ProductItemScreen extends StatelessWidget {
                   Row(
                     children: [
                       InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    ProfileTap(showFollowBottomInProfile: true),
-                              ));
-                        },
                         child: const CircleAvatar(
                           radius: 25,
                           backgroundImage:
@@ -132,31 +130,13 @@ class ProductItemScreen extends StatelessWidget {
                         width: 5,
                       ),
                       Text(
-                        "Elena Shelby",
+                        "Samuel Tesfaye",
                         style: Theme.of(context)
                             .textTheme
                             .headline3!
                             .copyWith(color: mainText),
                       ),
                       const Spacer(),
-                      const CircleAvatar(
-                        radius: 25,
-                        backgroundColor: primary,
-                        child: Icon(
-                          IconlyLight.heart,
-                          color: Colors.white,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "273 Likes",
-                        style: Theme.of(context)
-                            .textTheme
-                            .headline3!
-                            .copyWith(color: mainText),
-                      ),
                     ],
                   ),
                   const Padding(
@@ -186,17 +166,21 @@ class ProductItemScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "Ingredients",
+                    "Terms of condition",
                     style: Theme.of(context).textTheme.headline1,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: 3,
-                    itemBuilder: (context, index) => ingredients(context),
+                  Text(
+                    'Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText2!
+                        .copyWith(color: SecondaryText),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(vertical: 15),
@@ -205,88 +189,39 @@ class ProductItemScreen extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "Steps",
+                    "price rate",
                     style: Theme.of(context).textTheme.headline1,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    itemCount: 3,
-                    itemBuilder: (context, index) => steps(context, index),
+                  Text(
+                    '1000 birr/day',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText2!
+                        .copyWith(color: SecondaryText),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Divider(
+                      height: 4,
+                    ),
+                  ),
+                  CustomButton(
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignInScreen()),
+                          (route) => false);
+                    },
+                    text: "send rent request",
                   ),
                 ],
               ),
             ),
           );
         });
-  }
-
-  ingredients(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
-      child: Row(
-        children: [
-          const CircleAvatar(
-            radius: 10,
-            backgroundColor: Color(0xFFE3FFF8),
-            child: Icon(
-              Icons.done,
-              size: 15,
-              color: primary,
-            ),
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          Text(
-            "4 Eggs",
-            style: Theme.of(context).textTheme.bodyText2,
-          ),
-        ],
-      ),
-    );
-  }
-
-  steps(BuildContext context, int index) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          CircleAvatar(
-            backgroundColor: mainText,
-            radius: 12,
-            child: Text("${index + 1}"),
-          ),
-          Column(
-            children: [
-              SizedBox(
-                width: 270,
-                child: Text(
-                  "Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your",
-                  maxLines: 3,
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText2!
-                      .copyWith(color: mainText),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Image.asset(
-                "assets/imges/Rectangle 219.png",
-                height: 155,
-                width: 270,
-              )
-            ],
-          )
-        ],
-      ),
-    );
   }
 }
