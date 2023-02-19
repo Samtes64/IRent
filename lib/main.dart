@@ -2,8 +2,12 @@ import 'package:chefio1/constans/colors.dart';
 import 'package:chefio1/view/screen/product_item_screen.dart';
 import 'package:chefio1/view/screen/start_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 

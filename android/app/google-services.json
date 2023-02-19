@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "570932156217",
+    "project_id": "i-rent-1a051",
+    "storage_bucket": "i-rent-1a051.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570932156217:android:9e042a4b4173a056a5bae8",
+        "android_client_info": {
+          "package_name": "com.example.chefio1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570932156217-a84fnpejfdnmoh3ilrlh7m446g4gn555.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWSckJYpg3MAa5CKoUfetHWgvimkdoQyY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570932156217-a84fnpejfdnmoh3ilrlh7m446g4gn555.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
