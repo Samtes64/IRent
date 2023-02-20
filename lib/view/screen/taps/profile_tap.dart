@@ -4,6 +4,8 @@ import 'package:chefio1/view/widget/Custom_product_Item_widget.dart';
 import 'package:chefio1/view/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/Rate.dart';
+
 class ProfileTap extends StatelessWidget {
   ProfileTap({
     Key? key,
@@ -68,7 +70,7 @@ class ProfileTap extends StatelessWidget {
                                   radius: 12,
                                   backgroundColor: primary,
                                   child: Icon(
-                                    Icons.edit,
+                                    Icons.add,
                                     size: 15,
                                     color: Colors.white,
                                   ),
@@ -79,70 +81,26 @@ class ProfileTap extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        "Choirul Syafril",
-                        style: Theme.of(context).textTheme.headline2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Samuel Tesfaye",
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Text(
+                            "@samueltes",
+                            style: Theme.of(context).textTheme.bodyText1,
+                          ),
+                        ],
                       ),
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              "32",
-                              style: Theme.of(context).textTheme.headline2,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              "Recipes",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle1!
-                                  .copyWith(color: SecondaryText),
-                            )
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              "789",
-                              style: Theme.of(context).textTheme.headline2,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              "Following",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle1!
-                                  .copyWith(color: SecondaryText),
-                            )
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              "1.200",
-                              style: Theme.of(context).textTheme.headline2,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              "Followers",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .subtitle1!
-                                  .copyWith(color: SecondaryText),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: []),
                     showFollowBottomInProfile == true
                         ? CustomButton(onTap: () {}, text: "Follow")
                         : const SizedBox(
@@ -153,27 +111,41 @@ class ProfileTap extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 8,
+              height: 10,
             ),
             Container(
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
+              child: Column(),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+              child: Row(
                 children: [
-                  GridView.count(
-                    physics: const NeverScrollableScrollPhysics(),
-                    crossAxisCount: 2,
-                    shrinkWrap: true,
-                    childAspectRatio: 1 / 1.3,
-                    children: List.generate(
-                        5,
-                        (index) => CustomProductItemWidget(
-                              showUser: false,
-                            )),
-                  )
+                  Expanded(
+                      child: CustomButton(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RateAndReviewPage()),
+                      );
+                    },
+                    text: "Rate",
+                    color: Color.fromARGB(255, 54, 178, 226),
+                  )),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                      child: CustomButton(
+                    onTap: () {},
+                    text: "Report",
+                    color: Secondary,
+                  )),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -106,6 +106,11 @@ class _SignInScreenState extends State<SignInScreen> {
                             });
                           },
                         ),
+                        CustomButton(
+                          onTap: () {},
+                          text: "Sign Up",
+                          color: Secondary,
+                        ),
                       ]),
                 ),
               ],
