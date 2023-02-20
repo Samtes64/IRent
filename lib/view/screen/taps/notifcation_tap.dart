@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class NotitcationTap extends StatelessWidget {
   NotitcationTap({Key? key}) : super(key: key);
-  List newItem = ["liked", "follow"];
-  List todayItem = ["follow", "liked", "liked"];
+  List newItem = ["follow", "follow"];
+  List todayItem = ["like", "like"];
 
-  List oldesItem = ["follow", "follow", "liked", "liked"];
+  List oldesItem = [];
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,11 @@ class NotitcationTap extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "New",
+                  "Rent Requests",
                   style: Theme.of(context).textTheme.headline1,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 30,
                 ),
                 ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
@@ -40,9 +40,12 @@ class NotitcationTap extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
-                    "Today",
+                    "Reserve Requests",
                     style: Theme.of(context).textTheme.headline1,
                   ),
+                ),
+                const SizedBox(
+                  height: 30,
                 ),
                 ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
@@ -57,7 +60,7 @@ class NotitcationTap extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
-                    "Oldest",
+                    "",
                     style: Theme.of(context).textTheme.headline1,
                   ),
                 ),

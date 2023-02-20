@@ -54,14 +54,14 @@ class UploadTap extends StatelessWidget {
                         height: 20,
                       ),
                       Text(
-                        "Food Name",
+                        "Product Name",
                         style: Theme.of(context).textTheme.headline2,
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       CustomTextFildInUpload(
-                        hint: "Enter food name",
+                        hint: "Product",
                         radius: 30,
                       ),
                       const SizedBox(
@@ -75,7 +75,7 @@ class UploadTap extends StatelessWidget {
                         height: 20,
                       ),
                       CustomTextFildInUpload(
-                        hint: "Tell a little about your food",
+                        hint: "Tell a little about your Product",
                         maxLines: 4,
                       ),
                       const SizedBox(
@@ -131,10 +131,10 @@ class UploadTap extends StatelessWidget {
                     color: Colors.grey,
                   ),
                   Text(
-                    "Add Cove Photo",
+                    "Add Image",
                     style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
                   ),
-                  Text("Up to 12mp ")
+                  Text(" ")
                 ],
               ),
             ),

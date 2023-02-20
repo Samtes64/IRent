@@ -17,52 +17,64 @@ class _CustomFollowNotifcationState extends State<CustomFollowNotifcation> {
   bool follow = false;
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        const CircleAvatar(
-          radius: 25,
-          backgroundImage: const AssetImage("assets/imges/Avatar.png"),
-        ),
-        const SizedBox(
-          width: 15,
-        ),
-        Column(
-          mainAxisSize: MainAxisSize.min,
+        Row(
           children: [
-            Text(
-              "Mohammed Reshad",
-              style: Theme.of(context)
-                  .textTheme
-                  .headline3!
-                  .copyWith(color: mainText),
+            const CircleAvatar(
+              radius: 25,
+              backgroundImage: const AssetImage("assets/imges/Avatar.png"),
             ),
             const SizedBox(
-              height: 5,
+              width: 15,
             ),
-            Text(
-              "New Rent Request  .  h1",
-              style: Theme.of(context)
-                  .textTheme
-                  .subtitle1!
-                  .copyWith(color: SecondaryText),
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  "Mohammed Reshad",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline3!
+                      .copyWith(color: mainText),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  "New Rent Request  .  h1",
+                  style: Theme.of(context)
+                      .textTheme
+                      .subtitle1!
+                      .copyWith(color: SecondaryText),
+                ),
+              ],
             ),
           ],
         ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(left: follow == false ? 50 : 30),
-            child: CustomButton(
-              height: 40,
-              color: follow == false ? primary : form,
-              textColor: follow == false ? Colors.white : mainText,
+        Row(
+          children: [
+            Expanded(
+                child: CustomButton(
               onTap: () {
-                setState(() {
-                  follow = !follow;
-                });
+                Navigator.pop(context);
               },
               text: "Accept",
+            )),
+            const SizedBox(
+              width: 10,
             ),
-          ),
+            Expanded(
+                child: CustomButton(
+              onTap: () {},
+              text: "Reject",
+              color: Secondary,
+            )),
+          ],
+        ),
+        const SizedBox(
+          width: 20,
         ),
       ],
     );

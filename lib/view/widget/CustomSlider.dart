@@ -2,6 +2,8 @@ import 'package:chefio1/constans/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'custom_text_fild_in_upload.dart';
+
 class CustomSlider extends StatefulWidget {
   const CustomSlider({Key? key}) : super(key: key);
 
@@ -18,11 +20,11 @@ class _CustomSliderState extends State<CustomSlider> {
         Row(
           children: [
             Text(
-              "Cooking Duration",
+              "Price Rate",
               style: Theme.of(context).textTheme.headline2,
             ),
             Text(
-              "( in minutes )",
+              "( per day )",
               style: Theme.of(context).textTheme.bodyText1,
             ),
           ],
@@ -30,51 +32,10 @@ class _CustomSliderState extends State<CustomSlider> {
         const SizedBox(
           height: 20,
         ),
-        Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 22),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "< 10",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(color: primary),
-                  ),
-                  Text(
-                    "30",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(color: primary),
-                  ),
-                  Text(
-                    "> 50",
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText1!
-                        .copyWith(color: primary),
-                  ),
-                ],
-              ),
-            ),
-            Slider(
-                divisions: 2,
-                activeColor: primary,
-                thumbColor: primary,
-                max: 60,
-                min: 10,
-                value: slider,
-                onChanged: (value) {
-                  setState(() {
-                    slider = value;
-                  });
-                })
-          ],
-        )
+        CustomTextFildInUpload(
+          hint: "Price",
+          radius: 30,
+        ),
       ],
     );
   }

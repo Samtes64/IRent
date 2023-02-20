@@ -1,8 +1,11 @@
 import 'package:chefio1/constans/colors.dart';
 import 'package:chefio1/view/screen/home_screen.dart';
 import 'package:chefio1/view/widget/custom_button.dart';
+
 import 'package:chefio1/view/widget/custom_text_fild_in_upload.dart';
 import 'package:flutter/material.dart';
+
+import '../widget/custom_drobdown.dart';
 
 class SecondUploadScreen extends StatefulWidget {
   const SecondUploadScreen({Key? key}) : super(key: key);
@@ -54,28 +57,15 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Ingrediant",
+                          "Product category",
                           style: Theme.of(context).textTheme.headline2,
                         ),
-                        TextButton.icon(
-                            style: ButtonStyle(
-                                foregroundColor:
-                                    MaterialStateProperty.all(SecondaryText)),
-                            onPressed: () {},
-                            icon: const Icon(Icons.add),
-                            label: const Text("Group"))
                       ],
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    ListView.builder(
-                        physics: NeverScrollableScrollPhysics(),
-                        shrinkWrap: true,
-                        itemCount: ingrediants.length,
-                        itemBuilder: (context, index) =>
-                            enterIngerediant(index)),
-                    ingrediantsButton(),
+                    CustomDropdownInUpload(),
                   ],
                 ),
               ),
@@ -91,29 +81,50 @@ class _SecondUploadScreenState extends State<SecondUploadScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Steps",
+                          "Terms of use",
                           style: Theme.of(context).textTheme.headline2,
                         ),
-                        IconButton(
-                            onPressed: () {
-                              setState(() {
-                                steps.add(step(1));
-                              });
-                            },
-                            icon: const Icon(Icons.add))
                       ],
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: steps.length,
-                      itemBuilder: (context, index) => step(index),
+                    CustomTextFildInUpload(
+                      hint: "write terms of use for your product",
+                      maxLines: 6,
                     ),
                     SizedBox(
                       height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Location",
+                          style: Theme.of(context).textTheme.headline2,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomTextFildInUpload(
+                      hint: "City",
+                      radius: 30,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomTextFildInUpload(
+                      hint: "Sub City",
+                      radius: 30,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    CustomTextFildInUpload(
+                      hint: "Address",
+                      radius: 30,
                     ),
                     Row(
                       children: [
