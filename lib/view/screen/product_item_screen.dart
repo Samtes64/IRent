@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:chefio1/constans/colors.dart';
+import 'package:chefio1/view/screen/home_screen.dart';
 import 'package:chefio1/view/screen/sign_in_screen.dart';
 import 'package:chefio1/view/screen/taps/profile_tap.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class ProductItemScreen extends StatelessWidget {
         onTap: () {
           Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(builder: (context) => SignInScreen()),
+              MaterialPageRoute(builder: (context) => HomeScreen()),
               (route) => false);
         },
         child: Container(
@@ -64,6 +65,31 @@ class ProductItemScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  buttonrenter(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: InkWell(
+          child: Container(
+        alignment: Alignment.topRight,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            primary: Color.fromARGB(255, 111, 164, 207),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
+          onPressed: () {
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => SignInScreen()),
+                (route) => false);
+          },
+          child: Text('Renter'),
+        ),
+      )),
     );
   }
 
@@ -153,7 +179,7 @@ class ProductItemScreen extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    'Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your',
+                    'A 2021 Toyota Camry in excellent condition. This mid-size sedan comfortably seats up to five passengers with ample legroom and headroom. The exterior of the car is a sleek midnight black with tinted windows for privacy and to keep the interior cool on sunny days.',
                     style: Theme.of(context)
                         .textTheme
                         .bodyText2!
@@ -173,7 +199,7 @@ class ProductItemScreen extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    'Your recipe has been uploaded, you can see it on your profile. Your recipe has been uploaded, you can see it on your',
+                    'he vehicle must be returned on or before the agreed-upon date and time specified in the rental agreement. Failure to do so may result in additional rental fees or penalties.',
                     style: Theme.of(context)
                         .textTheme
                         .bodyText2!
@@ -216,7 +242,12 @@ class ProductItemScreen extends StatelessWidget {
                               builder: (context) => SignInScreen()),
                           (route) => false);
                     },
-                    text: "send rent request",
+                    text: "Rent",
+                  ),
+                  CustomButton(
+                    onTap: () {},
+                    text: "Reserve",
+                    color: Secondary,
                   ),
                 ],
               ),

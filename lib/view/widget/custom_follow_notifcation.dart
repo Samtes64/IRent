@@ -30,7 +30,7 @@ class _CustomFollowNotifcationState extends State<CustomFollowNotifcation> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              "Dean Winchester",
+              "Mohammed Reshad",
               style: Theme.of(context)
                   .textTheme
                   .headline3!
@@ -40,7 +40,7 @@ class _CustomFollowNotifcationState extends State<CustomFollowNotifcation> {
               height: 5,
             ),
             Text(
-              "New following you  .  h1",
+              "New Rent Request  .  h1",
               style: Theme.of(context)
                   .textTheme
                   .subtitle1!
@@ -60,7 +60,7 @@ class _CustomFollowNotifcationState extends State<CustomFollowNotifcation> {
                   follow = !follow;
                 });
               },
-              text: "Follow",
+              text: "Accept",
             ),
           ),
         ),

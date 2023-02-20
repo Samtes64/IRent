@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 import '../../widget/Custom_product_Item_widget.dart';
-import '../../widget/custom_binary_option.dart';
 
 class HomeTap extends StatelessWidget {
   const HomeTap({Key? key}) : super(key: key);
@@ -63,7 +62,6 @@ class HomeTap extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
-                    CustomBinaryOption(),
                     // Product List Part
                     Expanded(
                       child: GridView.count(

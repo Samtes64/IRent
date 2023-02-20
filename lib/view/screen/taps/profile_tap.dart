@@ -1,6 +1,6 @@
 import 'package:chefio1/constans/colors.dart';
 import 'package:chefio1/view/widget/Custom_product_Item_widget.dart';
-import 'package:chefio1/view/widget/custom_binary_option.dart';
+
 import 'package:chefio1/view/widget/custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -160,10 +160,6 @@ class ProfileTap extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  CustomBinaryOption(
-                    textLeft: "Recipes",
-                    textRight: "Liked",
-                  ),
                   GridView.count(
                     physics: const NeverScrollableScrollPhysics(),
                     crossAxisCount: 2,

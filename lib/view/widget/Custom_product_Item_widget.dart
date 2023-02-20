@@ -55,7 +55,7 @@ class _CustomProductItemWidgetState extends State<CustomProductItemWidget> {
                           width: 10,
                         ),
                         Text(
-                          "Calum Lewis",
+                          "Samuel Tesfaye",
                           style: Theme.of(context)
                               .textTheme
                               .subtitle1!
@@ -88,7 +88,7 @@ class _CustomProductItemWidgetState extends State<CustomProductItemWidget> {
                               builder: (context) => ProductItemScreen()));
                     },
                     child: Image.asset(
-                      "assets/imges/Rectangle 188.png",
+                      "assets/imges/car.jpg",
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -149,7 +149,7 @@ class _CustomProductItemWidgetState extends State<CustomProductItemWidget> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
-              "Pancake",
+              "Toyota Yaris",
               style: Theme.of(context).textTheme.headline2,
             ),
           ),
@@ -159,7 +159,7 @@ class _CustomProductItemWidgetState extends State<CustomProductItemWidget> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
-              "Food . > 60m",
+              "1000 birr/day",
               style: Theme.of(context)
                   .textTheme
                   .subtitle1!

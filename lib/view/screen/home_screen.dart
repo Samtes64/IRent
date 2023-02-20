@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
 // we ut the bottomm vavigation bar in a sepatatre method
       bottomNavigationBar: bottomNavigationBar(),
       // we put the foationAction Botton in a sepatatre method
-      floatingActionButton: floatingActionButton(),
+
       // here is the location of the floating action button
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterDocked,
@@ -86,18 +86,15 @@ class _HomeScreenState extends State<HomeScreen> {
     ),
     BottomNavigationBarItem(
       icon: Icon(IconlyBold.edit),
-      label: "Upload",
+      label: "Cart",
     ),
     BottomNavigationBarItem(
-      icon: Icon(
-        IconlyBold.scan,
-        color: Colors.white,
-      ),
-      label: "Scan",
+      icon: Icon(IconlyBold.plus),
+      label: "Post",
     ),
     BottomNavigationBarItem(
       icon: Icon(IconlyBold.notification),
-      label: "Notification",
+      label: "Requests",
     ),
     BottomNavigationBarItem(
       icon: Icon(IconlyBold.profile),
@@ -160,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                           builder: (context) => ScanUotputScreen(
-                                title: "Food",
+                                title: "Car",
                               )));
                 },
                 child: Container(
@@ -174,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Image.asset(
-                        "assets/imges/image 6.png",
+                        "assets/imges/car.jpg",
                         height: 100,
                         width: 100,
                       ),
@@ -211,7 +208,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Image.asset(
-                        "assets/imges/image 7.png",
+                        "assets/imges/cars.jpg",
                         height: 100,
                         width: 100,
                       ),

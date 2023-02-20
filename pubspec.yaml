@@ -40,8 +40,9 @@ dependencies:
   
   # Firebase Database
   cloud_firestore: ^4.4.2
+  firebase_auth: ^4.2.8
   
- 
+
 
 dev_dependencies:
   flutter_test:

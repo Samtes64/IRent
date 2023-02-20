@@ -58,7 +58,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               return null;
                             }
                           },
-                          hint: "Email or phone number",
+                          hint: "Email",
                           prefixIcon: IconlyBroken.message,
                         ),
                         CostomTextFormFild(

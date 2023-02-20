@@ -41,7 +41,7 @@ class _CustomCategoriesListState extends State<CustomCategoriesList> {
                   });
                 },
                 color: _index == 1 ? primary : form,
-                text: "Food",
+                text: "Cars",
                 textColor: _index == 1 ? Colors.white : SecondaryText,
                 width: _index == 1 ? 65 : 85),
             menuButton(
@@ -51,7 +51,7 @@ class _CustomCategoriesListState extends State<CustomCategoriesList> {
                   });
                 },
                 color: _index == 2 ? primary : form,
-                text: "Drink",
+                text: "House",
                 textColor: _index == 2 ? Colors.white : SecondaryText,
                 width: _index == 2 ? 65 : 85),
           ],
