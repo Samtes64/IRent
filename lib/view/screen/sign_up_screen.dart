@@ -65,17 +65,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       CostomTextFormFild(
                         onChanged: (value) {
-                          setState(() {
-                            _numberofDigits = value.length < 6 ? false : true;
-                          });
+                          
                         },
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "Please enter the password";
-                          } else {
-                            return null;
-                          }
-                        },
+                        
                         obscureText: obscure,
                         hint: "Password",
                         prefixIcon: IconlyBroken.lock,

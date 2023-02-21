@@ -1,4 +1,5 @@
 import 'package:chefio1/constans/colors.dart';
+import 'package:chefio1/view/screen/edituser.dart';
 import 'package:chefio1/view/screen/home_screen.dart';
 import 'package:chefio1/view/screen/product_item_screen.dart';
 import 'package:chefio1/view/screen/sign_up_screen.dart';
@@ -107,7 +108,13 @@ class _SignInScreenState extends State<SignInScreen> {
                           },
                         ),
                         CustomButton(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => EditUser(),
+                                ));
+                          },
                           text: "Sign Up",
                           color: Secondary,
                         ),
